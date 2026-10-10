@@ -83,6 +83,7 @@ void UnrealSharp::Build::BuildArguments(const FString& BuildAction, const TMap<F
 	
 	OutArgs.Reset();
 	OutArgs += BuildAction;
+	OutArgs += TEXT(" -WaitForUATMutex");
 	OutArgs += FString::Printf(TEXT(" -ScriptDir=\"%s\""), *FPaths::Combine(PluginFolder, TEXT("Build"), TEXT("Scripts")));
 	OutArgs += FString::Printf(TEXT(" -Project=\"%s\""), *FPaths::ConvertRelativePathToFull(FPaths::GetProjectFilePath()));
 	
